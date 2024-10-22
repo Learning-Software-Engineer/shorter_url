@@ -1,0 +1,7 @@
+cassandra:
+  url: localhost
+  keyspace: "shorturl"
+  host: 9042
+server:
+  port: 8080
+  mode: "dev"
