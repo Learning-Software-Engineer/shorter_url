@@ -2,10 +2,11 @@ package initialize
 
 import (
 	"github.com/a6slab/shorter_url/global"
+	"github.com/a6slab/shorter_url/internal/handler"
 	"github.com/gin-gonic/gin"
 )
 
-func InitRouter() *gin.Engine {
+func InitRouter(handler handler.ShorterHandler) *gin.Engine {
 	var r *gin.Engine
 	if global.Config.Server.Mode == "dev" {
 		gin.SetMode(gin.DebugMode)
@@ -15,5 +16,6 @@ func InitRouter() *gin.Engine {
 		gin.SetMode(gin.ReleaseMode)
 		r = gin.New()
 	}
+
 	return r
 }
